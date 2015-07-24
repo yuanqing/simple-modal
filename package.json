@@ -1,22 +1,22 @@
 {
-  "name": "simple-modal",
+  "name": "tiny-modal",
   "version": "0.0.0",
   "description": "No-nonsense modal windows in vanilla JavaScript. Bring your own CSS.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yuanqing/simple-modal.git"
+    "url": "git://github.com/yuanqing/tiny-modal.git"
   },
-  "main": "simple-modal.js",
+  "main": "tiny-modal.js",
   "devDependencies": {
     "jshint": "^2.8.0",
     "uglify-js": "^2.4.24"
   },
   "scripts": {
     "start": "npm run dist && open 'http://localhost:4242/example/'; ecstatic --port 4242",
-    "lint": "jshint --verbose simple-modal.js",
-    "dist": "uglifyjs simple-modal.js --mangle --output simple-modal.min.js",
+    "lint": "jshint --verbose tiny-modal.js",
+    "dist": "uglifyjs tiny-modal.js --mangle --output tiny-modal.min.js",
     "build": "npm run lint && npm run dist"
   },
   "keywords": [

@@ -11,12 +11,12 @@
     }
   }
 
-  function SimpleModal(modal, opts) {
+  function TinyModal(modal, opts) {
 
-    // Allow `SimpleModal` to be called without the `new` keyword.
+    // Allow `TinyModal` to be called without the `new` keyword.
     var self = this;
-    if (!(self instanceof SimpleModal)) {
-      return new SimpleModal(modal, opts);
+    if (!(self instanceof TinyModal)) {
+      return new TinyModal(modal, opts);
     }
 
     // Parse `opts`.
@@ -57,11 +57,11 @@
 
   }
 
-  SimpleModal.prototype.show = function() {
+  TinyModal.prototype.show = function() {
     var self = this;
     var modal = self.modal;
     if (!self.isShown) {
-      // Disable scrolling from the window, and show the `modal`.
+      // Disable scrolling on the window, and show the `modal`.
       document.body.style.overflow = 'hidden';
       modal.style.display = 'block';
       if (self.scrollTop) {
@@ -73,10 +73,10 @@
     }
   };
 
-  SimpleModal.prototype.hide = function() {
+  TinyModal.prototype.hide = function() {
     var self = this;
     if (self.isShown) {
-      // Enabe scrolling from the window, and hide the `modal`.
+      // Enable scrolling on the window, and hide the `modal`.
       document.body.style.overflow = '';
       self.modal.style.display = 'none';
       self.isShown = false;
@@ -86,9 +86,9 @@
 
   /* istanbul ignore else */
   if (typeof module === 'object') {
-    module.exports = SimpleModal;
+    module.exports = TinyModal;
   } else {
-    root.simpleModal = SimpleModal;
+    root.simpleModal = TinyModal;
   }
 
 })(this);
