@@ -1,0 +1,16 @@
+{
+  "name": "simple-modal",
+  "main": "simple-modal.min.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yuanqing/simple-modal",
+  "authors": [
+    "Lim Yuan Qing"
+  ],
+  "description": "No-nonsense modal windows in vanilla JavaScript. Bring your own CSS.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ]
+}
