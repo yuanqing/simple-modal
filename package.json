@@ -1,6 +1,6 @@
 {
   "name": "tiny-modal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "No-nonsense modal windows in vanilla JavaScript. Bring your own CSS.",
   "author": "Lim Yuan Qing",
   "license": "MIT",

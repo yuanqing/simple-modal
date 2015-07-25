@@ -1,7 +1,7 @@
 {
   "name": "tiny-modal",
   "main": "tiny-modal.min.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/yuanqing/tiny-modal",
   "authors": [
     "Lim Yuan Qing"
