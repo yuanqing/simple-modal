@@ -6,8 +6,8 @@
 
 - Define DOM elements on which to trigger show and hide on `click`
 - Trigger show and hide programmatically
-- Hide the modal on hitting the `<Esc>` key
 - Optionally define `onShow` and `onHide` callbacks
+- Hide the modal on hitting the `<Esc>` key
 - Zero dependencies, and only 1.2 KB [minified](tiny-modal.min.js) or 0.59 KB minified and gzipped
 
 ## Usage
@@ -91,7 +91,7 @@ Hides the modal.
 
 - The following are applied as *inline styles* on the `elem` passed to `tinyModal`:
 
-  ```css
+  ```
   display: none;
   position: fixed;
   top: 0;
