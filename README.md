@@ -12,7 +12,7 @@
 
 ## Usage
 
-> [**Editable demo**](http://jsfiddle.net/98k622ah/)
+> [**Editable demo**](https://jsfiddle.net/reo95c66/)
 
 ```html
 <!DOCTYPE html>
@@ -27,12 +27,12 @@
   </head>
   <body>
 
-    <button class="modal-show">Show modal</button>
+    <button class="modal-show">Show</button>
     <div style="height: 1000px;"><!-- content --></div>
 
     <div class="modal">
       <div class="modal-dialog">
-        <button class="modal-hide">Hide modal</button>
+        <button class="modal-hide">Hide</button>
         <div style="height: 1000px;"><!-- content --></div>
       </div>
     </div>
