@@ -88,7 +88,7 @@
   if (typeof module === 'object') {
     module.exports = TinyModal;
   } else {
-    root.simpleModal = TinyModal;
+    root.tinyModal = TinyModal;
   }
 
 })(this);
