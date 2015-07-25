@@ -22,8 +22,8 @@
     // Parse `opts`.
     opts = opts || {};
     self.scrollTop = opts.scrollTop != null ? opts.scrollTop : true;
-    self.onShown = opts.onShown || function() {};
-    self.onHidden = opts.onHidden || function() {};
+    self.onShow = opts.onShow || function() {};
+    self.onHide = opts.onHide || function() {};
     self.isShown = false;
     self.modal = modal;
 
@@ -31,19 +31,19 @@
     modal.style.cssText += 'display:none;position:fixed;top:0;right:0;bottom:0;left:0;overflow:auto;will-change:transform;';
 
     // Bind the `close` and `open` methods to the click event of elements that
-    // match `opts.closeButtonSelector` and `opts.openButtonSelector`.
-    bindToClick(opts.closeButtonSelector || '.modal-hide', function() {
-      self.hide();
+    // match `opts.closeSelector` and `opts.openSelector`.
+    bindToClick(opts.closeSelector || '.modal-hide', function(e) {
+      self.hide(e.target);
     });
-    bindToClick(opts.openButtonSelector || '.modal-show', function() {
-      self.show();
+    bindToClick(opts.openSelector || '.modal-show', function(e) {
+      self.show(e.target);
     });
 
     // Bind the `close` method to the `click` event on the `modal`. Only close
     // the modal if we had clicked directly on the `modal` (ie. the overlay).
     modal.addEventListener('click', function(e) {
       if (e.target === modal) {
-        self.hide();
+        self.hide(modal);
       }
     });
 
@@ -51,36 +51,35 @@
     // we had pressed the `escape` key.
     document.addEventListener('keydown', function(e) {
       if (e.keyCode === 27) {
-        self.hide();
+        self.hide(e.target);
       }
     });
 
   }
 
-  TinyModal.prototype.show = function() {
+  TinyModal.prototype.show = function(target) {
     var self = this;
-    var modal = self.modal;
     if (!self.isShown) {
       // Disable scrolling on the window, and show the `modal`.
       document.body.style.overflow = 'hidden';
-      modal.style.display = 'block';
+      self.modal.style.display = 'block';
       if (self.scrollTop) {
         // Scroll to the top of the modal.
-        modal.scrollTop = 0;
+        self.modal.scrollTop = 0;
       }
       self.isShown = true;
-      self.onShown(modal);
+      self.onShow(target, self.modal);
     }
   };
 
-  TinyModal.prototype.hide = function() {
+  TinyModal.prototype.hide = function(target) {
     var self = this;
     if (self.isShown) {
       // Enable scrolling on the window, and hide the `modal`.
       document.body.style.overflow = '';
       self.modal.style.display = 'none';
       self.isShown = false;
-      self.onHidden(self.modal);
+      self.onHide(target, self.modal);
     }
   };
 
