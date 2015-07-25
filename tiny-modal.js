@@ -31,11 +31,11 @@
     modal.style.cssText += 'display:none;position:fixed;top:0;right:0;bottom:0;left:0;overflow:auto;will-change:transform;';
 
     // Bind the `close` and `open` methods to the click event of elements that
-    // match the `opts.closeButtonClass` and `opts.openButtonClass` selectors.
-    bindToClick(opts.closeButtonClass || '.modal-hide', function() {
+    // match `opts.closeButtonSelector` and `opts.openButtonSelector`.
+    bindToClick(opts.closeButtonSelector || '.modal-hide', function() {
       self.hide();
     });
-    bindToClick(opts.openButtonClass || '.modal-show', function() {
+    bindToClick(opts.openButtonSelector || '.modal-show', function() {
       self.show();
     });
 
