@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tiny-modal</title>
+    <meta charset="utf-8">
+    <style>
+      .modal {background: rgba(0,0,0,.5); }
+      .modal-dialog {margin: 50px auto; max-width: 500px; background: #fff; }
+    </style>
+  </head>
+  <body>
+
+    <button class="modal-show">Show modal</button>
+    <div style="height: 1000px;"><!-- content --></div>
+
+    <div class="modal">
+      <div class="modal-dialog">
+        <button class="modal-hide">Hide modal</button>
+        <div style="height: 1000px;"><!-- content --></div>
+      </div>
+    </div>
+
+    <script src="../tiny-modal.min.js"></script>
+    <script>
+      var elem = document.querySelector('.modal');
+      var opts = {
+        showSelector: '.modal-show',
+        hideSelector: '.modal-hide',
+        onShow: function(target, modal) {},
+        onHide: function(target, modal) {},
+        scrollTop: true
+      };
+      tinyModal(elem, opts);
+    </script>
+
+  </body>
+</html>
