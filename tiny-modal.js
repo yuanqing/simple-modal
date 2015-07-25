@@ -32,10 +32,10 @@
 
     // Bind the `close` and `open` methods to the click event of elements that
     // match the `opts.closeButtonClass` and `opts.openButtonClass` selectors.
-    bindToClick(opts.closeButtonClass || '.modal-close', function() {
+    bindToClick(opts.closeButtonClass || '.modal-hide', function() {
       self.hide();
     });
-    bindToClick(opts.openButtonClass || '.modal-open', function() {
+    bindToClick(opts.openButtonClass || '.modal-show', function() {
       self.show();
     });
 
